@@ -4,6 +4,9 @@
 ## Project 1 - File: plot4.R
 ## *********************************************************************************************
 
+source('dataReader.R')
+source('export.R')
+
 ## *********************************************************************************************
 ## This function takes 1 parameter as input: filename.txt
 ##
@@ -66,7 +69,5 @@ plot4 <- function(file) {
        dataFrame$Global_reactive_power, 
        type="l", xlab="datetime", ylab="Global_reactive_power")
   
-  dev.copy(png, file="plot4.png", width=480, height=480)
-  dev.off()
-  cat("plot4.png has been saved in", getwd())
+  exportPlot("plot4.png")
 }

@@ -4,6 +4,9 @@
 ## Project 1 - File: plot2.R
 ## *********************************************************************************************
 
+source('dataReader.R')
+source('export.R')
+
 ## *********************************************************************************************
 ## This function takes 1 parameter as input: filename.txt
 ##
@@ -31,7 +34,5 @@ plot2 <- function(file) {
        type="l", xlab="", ylab="Global Active Power (kilowatts)")
   
   # using the graphics package to copy the plot to the current folder.
-  dev.copy(png, file="plot2.png", width=480, height=480)
-  dev.off()
-  cat("plot2.png has been saved in", getwd())
+  exportPlot("plot2.png")
 }

@@ -4,6 +4,9 @@
 ## Project 1 - File: plot3.R
 ## *********************************************************************************************
 
+source('dataReader.R')
+source('export.R')
+
 ## *********************************************************************************************
 ## This function takes 1 parameter as input: filename.txt
 ##
@@ -40,8 +43,5 @@ plot3 <- function(file) {
          c("Sub_metering_1  ","Sub_metering_2  ", "Sub_metering_3  "),
          lty=c(1,1), lwd=c(1,1))
   
-  # using the graphics package to copy the plot to the current folder.
-  dev.copy(png, file="plot3.png", width=480, height=480)
-  dev.off()
-  cat("plot3.png has been saved in", getwd())
+  export("plot3.png")
 }
